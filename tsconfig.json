@@ -30,6 +30,6 @@
     //   "jsx": "preserve",
     //   "incremental": true
   }
-  // "include": ["**/*.ts", "**/*.tsx"]
-  // "exclude": ["node_modules", "storybook-static", "chrome", "firefox", ".next"]
+  // "include": ["**/*.ts", "**/*.tsx"],
+  // "exclude": ["node_modules"]
 }

@@ -1,11 +1,13 @@
 {
   "name": "npmpackagetest123",
-  "version": "1.0.349",
+  "version": "1.0.3529",
   "description": "Reusable ui library  practice",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "files": [
-    "dist"
+    "dist",
+    "package.json",
+    "README.md"
   ],
   "types": "dist/index.d.ts",
   "scripts": {
@@ -15,25 +17,22 @@
   },
   "author": "uilib123",
   "license": "ISC",
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
-  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
     "@tailwindcss/postcss": "^4.0.9",
     "@tailwindcss/typography": "^0.5.16",
     "@types/react": "^19.0.10",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
+    "rollup": "^4.34.9",
+    "rollup-plugin-dts": "^6.1.1",
     "tailwindcss": "^3.4.17",
     "tslib": "^2.8.1",
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@rollup/plugin-commonjs": "^28.0.2",
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "classnames": "^2.5.1",
-    "postcss": "^8.5.3",
-    "rollup": "^4.34.9",
-    "rollup-plugin-dts": "^6.1.1"
+    "classnames": "^2.5.1"
   }
 }
