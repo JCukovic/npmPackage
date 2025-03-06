@@ -1,6 +1,6 @@
 {
   "name": "npmpackagetest123",
-  "version": "1.0.3529",
+  "version": "1.0.3631",
   "description": "Reusable ui library  practice",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -28,6 +28,7 @@
     "postcss": "^8.5.3",
     "rollup": "^4.34.9",
     "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-postcss": "^4.0.2",
     "tailwindcss": "^3.4.17",
     "tslib": "^2.8.1",
     "typescript": "^5.8.2"
