@@ -14,22 +14,30 @@ type ButtonContentProps = {
 const ButtonContent = ({ label, icon, iconPosition, success, hasSuccess, pending }: ButtonContentProps) => {
   if (pending) {
     return (
-      <div className="px-12">
-        <div className="pending" />
+      <div className="uilib-px-12">
+        <div className="uilib-pending" />
       </div>
     );
   } else if (success && hasSuccess) {
     return (
-      <div className={classNames({ "flex items-center": true, "flex-row-reverse": iconPosition === "right" })}>
+      <div
+        className={classNames({
+          "uilib-flex uilib-items-center": true,
+          "uilib-flex-row-reverse": iconPosition === "right",
+        })}>
         {success.icon}
-        <span className="px-3">{success.label}</span>
+        <span className="uilib-px-3">{success.label}</span>
       </div>
     );
   } else {
     return (
-      <div className={classNames({ "flex items-center": true, "flex-row-reverse": iconPosition === "right" })}>
+      <div
+        className={classNames({
+          "uilib-flex uilib-items-center": true,
+          "uilib-flex-row-reverse": iconPosition === "right",
+        })}>
         {icon}
-        <span className="px-3">{label}</span>
+        <span className="uilib-px-3">{label}</span>
       </div>
     );
   }
@@ -61,18 +69,21 @@ const Button = ({
 }: ButtonProps) => (
   <button
     className={classNames({
-      "flex items-center justify-center rounded text-sm font-medium leading-none tracking-normal disabled:cursor-not-allowed disabled:text-opacity-50":
+      "uilib-flex uilib-items-center uilib-justify-center uilib-rounded uilib-text-sm uilib-font-medium uilib-leading-none uilib-tracking-normal uilib-disabled:cursor-not-allowed uilib-disabled:text-opacity-50":
         true,
-      "w-full": fullWidth,
-      "bg-betaCom text-gray-50 hover:bg-nm-900 disabled:bg-nmGray-100 disabled:text-nmGray-700 disabled:hover:bg-nmGray-100":
+      "uilib-w-full": fullWidth,
+      "uilib-bg-betaCom uilib-text-gray-50 hover:uilib-bg-nm-900 uilib-disabled:uilib-bg-nmGray-100 uilib-disabled:uilib-text-nmGray-700 uilib-disabled:hover:uilib-bg-nmGray-100":
         variant === "primary",
-      "border-nmGray-100 bg-nmGray-100 text-black hover:bg-nmGray-300 disabled:hover:bg-nmGray-100": variant === "secondary",
-      "border border-solid border-nmGray-500 bg-transparent text-black hover:border-slate-500 disabled:text-nmGray-700 disabled:hover:border-nmGray-500":
+      "uilib-border-nmGray-100 uilib-bg-nmGray-100 uilib-text-black hover:uilib-bg-nmGray-300 uilib-disabled:hover:uilib-bg-nmGray-100":
+        variant === "secondary",
+      "uilib-border uilib-border-solid uilib-border-nmGray-500 uilib-bg-transparent uilib-text-black hover:uilib-border-slate-500 uilib-disabled:uilib-text-nmGray-700 uilib-disabled:hover:uilib-border-nmGray-500":
         variant === "tertiary",
-      "bg-transparent text-black hover:text-nmGray-700 disabled:text-nmGray-900": variant === "text",
-      "rounded-[42px] border border-nmGray-300 hover:bg-nmGray-300 disabled:hover:bg-nmGray-100": variant === "backButton",
-      "px-6 py-4": !isSmall,
-      "p-3 text-xs": isSmall,
+      "uilib-bg-transparent uilib-text-black hover:uilib-text-nmGray-700 uilib-disabled:uilib-text-nmGray-900":
+        variant === "text",
+      "uilib-rounded-[42px] uilib-border uilib-border-nmGray-300 hover:uilib-bg-nmGray-300 uilib-disabled:hover:uilib-bg-nmGray-100":
+        variant === "backButton",
+      "uilib-px-6 uilib-py-4": !isSmall,
+      "uilib-p-3 uilib-text-xs": isSmall,
     })}
     // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     disabled={disabled || pending}
