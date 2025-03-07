@@ -1,59 +1,98 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-
 import Button from "./Button";
+import Icons from "../../../icons";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Example/Button",
+  title: "Components/Button",
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+  args: {
+    onClick: fn(),
+    label: "Button",
+  },
+  argTypes: {
+    label: { control: "text" },
+    variant: { control: "select", options: ["primary", "secondary", "tertiary", "text", "backButton"] },
+    fullWidth: { control: "boolean" },
+    isSmall: { control: "boolean" },
+    disabled: { control: "boolean" },
+    iconPosition: { control: "select", options: ["left", "right"] },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Default: Story = {
+  args: {
+    label: "Button",
+  },
+};
+
 export const Primary: Story = {
   args: {
+    ...Default.args,
     variant: "primary",
-    label: "Button",
   },
 };
 
 export const Secondary: Story = {
   args: {
+    ...Default.args,
     variant: "secondary",
-    label: "Button",
   },
 };
 
 export const Tertiary: Story = {
   args: {
+    ...Default.args,
     variant: "tertiary",
-    label: "Button",
   },
 };
 
 export const Text: Story = {
   args: {
+    ...Default.args,
     variant: "text",
-    label: "Button",
   },
 };
 
 export const BackButton: Story = {
   args: {
+    ...Default.args,
     variant: "backButton",
-    label: "Button",
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    ...Default.args,
+    icon: Icons.Cart({ width: "20", height: "20" }),
+  },
+};
+
+export const IconRight: Story = {
+  args: {
+    ...Default.args,
+    icon: Icons.Cart({ width: "20", height: "20" }),
+    iconPosition: "right",
+  },
+};
+
+export const Small: Story = {
+  args: {
+    ...Default.args,
+    isSmall: true,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    ...Default.args,
+    disabled: true,
   },
 };

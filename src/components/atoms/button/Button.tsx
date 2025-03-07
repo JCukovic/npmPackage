@@ -69,18 +69,17 @@ const Button = ({
 }: ButtonProps) => (
   <button
     className={classNames({
-      "uilib-flex uilib-items-center uilib-justify-center uilib-rounded uilib-text-sm uilib-font-medium uilib-leading-none uilib-tracking-normal uilib-disabled:cursor-not-allowed uilib-disabled:text-opacity-50":
+      "uilib-flex uilib-items-center uilib-justify-center uilib-rounded uilib-text-sm uilib-font-medium uilib-leading-none uilib-tracking-normal disabled:uilib-cursor-not-allowed disabled:uilib-text-opacity-50 ":
         true,
       "uilib-w-full": fullWidth,
-      "uilib-bg-betaCom uilib-text-gray-50 hover:uilib-bg-nm-900 uilib-disabled:uilib-bg-nmGray-100 uilib-disabled:uilib-text-nmGray-700 uilib-disabled:hover:uilib-bg-nmGray-100":
+      "uilib-bg-betaCom uilib-text-gray-50 hover:uilib-bg-nm-900 disabled:uilib-bg-nmGray-100 disabled:uilib-text-nmGray-700 disabled:hover:uilib-bg-nmGray-100":
         variant === "primary",
-      "uilib-border-nmGray-100 uilib-bg-nmGray-100 uilib-text-black hover:uilib-bg-nmGray-300 uilib-disabled:hover:uilib-bg-nmGray-100":
+      "uilib-border-nmGray-100 uilib-bg-nmGray-100 uilib-text-black hover:uilib-bg-nmGray-300 disabled:hover:uilib-bg-nmGray-100":
         variant === "secondary",
-      "uilib-border uilib-border-solid uilib-border-nmGray-500 uilib-bg-transparent uilib-text-black hover:uilib-border-slate-500 uilib-disabled:uilib-text-nmGray-700 uilib-disabled:hover:uilib-border-nmGray-500":
+      "uilib-border uilib-border-solid uilib-border-nmGray-500 uilib-bg-transparent uilib-text-black hover:uilib-border-slate-500 disabled:uilib-text-nmGray-700 disabled:hover:uilib-border-nmGray-500":
         variant === "tertiary",
-      "uilib-bg-transparent uilib-text-black hover:uilib-text-nmGray-700 uilib-disabled:uilib-text-nmGray-900":
-        variant === "text",
-      "uilib-rounded-[42px] uilib-border uilib-border-nmGray-300 hover:uilib-bg-nmGray-300 uilib-disabled:hover:uilib-bg-nmGray-100":
+      "uilib-bg-transparent uilib-text-black hover:uilib-text-nmGray-700 disabled:uilib-text-nmGray-900": variant === "text",
+      "uilib-rounded-[42px] uilib-border uilib-border-nmGray-300 hover:uilib-bg-nmGray-300 disabled:hover:uilib-bg-nmGray-100":
         variant === "backButton",
       "uilib-px-6 uilib-py-4": !isSmall,
       "uilib-p-3 uilib-text-xs": isSmall,
